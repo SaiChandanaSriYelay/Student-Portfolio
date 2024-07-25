@@ -1,0 +1,399 @@
+/* General Body Styles */
+body {
+    background: #080808;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Surname styles */
+.surname {
+    font-size: 36px;
+    color: hwb(0 100% 0%);
+    font-weight: bold;
+    
+   
+}
+
+/* Navigation Styles */
+nav {
+    background: #eb0abe;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #90ee90;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile Section Styles */
+.profile-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+    animation: profile-image-animation 2s forwards;
+}
+
+@keyframes profile-image-animation {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.profile-image img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.profile-text {
+    max-width: 1500px;
+    font-size: 30px;
+    padding: 100px 10px;
+    color: #fff;
+    animation: text-animation 2s forwards;
+}
+
+
+/* Background Image for About Section */
+#about {
+    background: url('images/bg.avif') no-repeat center center;
+    background-size: cover;
+   
+}
+
+/* Background Image for Education Section */
+#education {
+    background: url('images/bg.avif') no-repeat center center;
+    background-size: cover;
+   
+}
+
+/* Adjust text color and padding to ensure readability and spacing */
+
+
+/* About Section Styles */
+.about-description, .projects-description, .hobbies-description, .contact-description {
+    padding: 50px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+}
+
+.about-description p, .projects-description p {
+    margin-bottom: 20px;
+}
+
+.about-description h2, .projects-description h2, .hobbies-description h2, .contact-description h2 {
+    color: #c814c8;
+    font-size: 32px;
+}
+
+/* Education Section Styles */
+.education-circles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.education-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #808080; /* Changed to grey */
+    border: 5px solid #eb0abe; /* Pink border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+  
+    text-decoration:none;
+}
+
+.education-text {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+    line-height: 1.2;
+    padding: 10px;
+}
+
+
+
+
+/* Technical Skills Section Styles */
+.technical-skills {
+    background-image: url('images/tech.webp');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    color: #fff;
+    border-radius: 10px;
+    height: 700px; /* Increased height of the section */
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.technical-skills-content {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the box */
+    padding: 40px 50px; /* Increased padding for a larger box */
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for emphasis */
+    max-width: 90%; /* Increased maximum width */
+    text-align: center;
+}
+
+.technical-skills h2 {
+    font-size: 32px; /* Larger font size for the heading */
+    color: #90ee90;
+}
+
+.technical-skills ul {
+    list-style: none;
+    padding: 0;
+    font-size: 28px; /* Larger font size for the list items */
+    margin: 0;
+}
+
+.technical-skills ul li {
+    margin-bottom: 15px; /* Increased margin between items */
+}
+
+/* Soft Skills Section Styles */
+.soft-skills {
+    background-image: url('images/soft.webp');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    color: #fff;
+    border-radius: 10px;
+    height: 700px; /* Increased height of the section */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.soft-skills-content {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the box */
+    padding: 40px 50px; /* Increased padding for a larger box */
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for emphasis */
+    max-width: 90%; /* Increased maximum width */
+    text-align: center;
+}
+
+.soft-skills h2 {
+    font-size: 32px; /* Larger font size for the heading */
+    color: #90ee90;
+}
+
+.soft-skills ul {
+    list-style: none;
+    padding: 0;
+    font-size: 28px; /* Larger font size for the list items */
+    margin: 0;
+}
+
+.soft-skills ul li {
+    margin-bottom: 15px; /* Increased margin between items */
+}
+/* Hobbies Section Styles */
+.hobbies-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.hobby-box {
+    position: relative;
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    background: #808080; /* Background color for the boxes */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.hobby-box:hover {
+    background-color: #c76bb0; /* Change background color on hover */
+}
+
+.hobby-text {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    line-height: 200px; /* Center text vertically */
+    z-index: 2;
+    pointer-events: none; /* Ensure text doesn't interfere with image hover */
+}
+
+.hobby-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.hobby-box:hover .hobby-image {
+    opacity: 1;
+}
+
+/* Contact Section Styles */
+.contact-description {
+    padding: 50px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+    background-image: url('images/con.webp'); /* Update with your background image path */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    max-width: 600px; /* Set the maximum width */
+    margin: 0 auto; /* Center the section */
+}
+
+.contact-description h2 {
+    color: #c814c8;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-description form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-description form label {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.contact-description form input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 15px; /* Changed border-radius to match the skill boxes */
+    border: none;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff; /* White text */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for emphasis */
+    transition: background-color 0.3s;
+    width: 100%; /* Make input boxes take full width of the form */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.contact-description form input:focus {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker on focus */
+}
+
+.contact-description form button {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #f05dc8;
+    color: #fff;
+    border-radius: 15px; /* Changed border-radius to match the skill boxes */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make the button take full width of the form */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.contact-description form button:hover {
+    background-color: #d2249e;
+}
+/* Social Icons Styles */
+.social-icons {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.social-icon {
+    color: #ac23a9;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #b31755;
+    text-decoration: none;
+}

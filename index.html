@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <nav>
+        <div class="navbar-left">
+            <span class="surname">YELAY</span>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+               
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="profile-image">
+            <img src="images/Miss chandana.jpg" alt="Profile Image">
+        </div>
+        <div class="profile-text">
+            <p>Hey! Hi, I am Sai Chandana Sri Yelay</p>
+            <p>a Web designer and Ambitious girl.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yelay-sai-chandana/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:yelaysaichandu@gmail.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:8466028221" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://x.com/ysaichandana" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="about-description">
+            <h2>About:</h2>
+            <p>I am Sai Chandana Sri Yelay, currently studying at SRM University, AP. I am in my third year of pursuing a degree in Computer Science and Engineering. My career aspiration is to become a professional ethical hacker.</p>
+            <p>In addition to my academic pursuits, I have a future vision of leading a business aimed at improving societal health. Specifically, I plan to establish a healthy food business with the goal of making at least 1% of society healthier.</p>
+        </div>
+    </section>
+    <section id="education">
+        <div class="education-description">
+            <h2>Education:</h2>
+            <div class="education-circles">
+                <a href="https://srmap.edu.in/" target="_blank" class="education-circle" id="srmuniversity">
+                    <span class="education-text">Graduation at SRM University, AP</span>
+                </a>
+                <a href="https://www.narayanagroup.com/" target="_blank" class="education-circle" id="narayana">
+                    <span class="education-text">Intermediate at Narayana Junior College, Nandyal</span>
+                </a>
+                <a href="https://goodshepherdschoolnandyal.in/" target="_blank" class="education-circle" id="good_shepherd">
+                    <span class="education-text">Schooling at Good Shepherd, Nandyal</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="technical-skills">
+            <div class="technical-skills-content">
+                <h2>Technical Skills:</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </div>
+        <div class="soft-skills">
+            <div class="soft-skills-content">
+                <h2>Soft Skills:</h2>
+                <ul>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Problem-solving</li>
+                    <li>Time management</li>
+                    <li>Adaptability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="hobbies">
+        <div class="hobbies-description">
+            <h2>Hobbies:</h2>
+            <div class="hobbies-container">
+                <div class="hobby-box">
+                    <span class="hobby-text">Reading Books</span>
+                    <img src="images/reading.jpeg" alt="Reading Books" class="hobby-image">
+                </div>
+                <div class="hobby-box">
+                    <span class="hobby-text">Cooking</span>
+                    <img src="images/cooking.webp" alt="Cooking" class="hobby-image">
+                </div>
+                <div class="hobby-box">
+                    <span class="hobby-text">Yoga</span>
+                    <img src="images/yoga.jpeg" alt="Yoga" class="hobby-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="contact-description">
+          
+            <div class="contact-form">
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+           
+        </div>
+    </section>
+    
+
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+    
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, phone })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Submitted successfully");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    
+        // Add smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Add hover effect on navigation links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('mouseover', function() {
+                this.style.color = '#90ee90';
+            });
+            link.addEventListener('mouseout', function() {
+                this.style.color = '#fff';
+            });
+        });
+    
+        // Add animation on scroll for sections
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                } else {
+                    entry.target.classList.remove('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>   
+</html>
